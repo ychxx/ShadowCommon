@@ -1,0 +1,3 @@
+rootProject.name = "ShadowCommon"
+include ':app'
+include ':commonLib'
