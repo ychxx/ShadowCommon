@@ -59,4 +59,18 @@ dependencies {
     api "com.github.bumptech.glide:glide:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
 
+
+    /**TODO --paging3 分页库--**/
+    implementation "androidx.paging:paging-runtime:$paging_version"
+    // alternatively - without Android dependencies for tests
+    implementation "androidx.paging:paging-common:$paging_version"
+    // 可选RxJava2支持
+    implementation "androidx.paging:paging-rxjava2:$paging_version"
+    // 可选RxJava3支持
+//    implementation "androidx.paging:paging-rxjava3:$paging_version"
+    // optional - Guava ListenableFuture support
+    implementation "androidx.paging:paging-guava:$paging_version"
+    // Jetpack Compose Integration
+    implementation "androidx.paging:paging-compose:1.0.0-alpha04"
+
 }
