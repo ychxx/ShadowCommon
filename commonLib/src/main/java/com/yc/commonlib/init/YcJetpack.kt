@@ -19,7 +19,7 @@ object YcJetpack {
     var mDefaultBaseUrl = ""
     public lateinit var mApplication: Application
     @JvmStatic
-    fun init(app: Application, baseUrl: String = "") {
+    fun ycInit(app: Application, baseUrl: String = "") {
         mApplication = app
         mDefaultBaseUrl = baseUrl
         //Logger初始化
