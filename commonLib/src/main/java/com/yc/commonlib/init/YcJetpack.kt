@@ -22,7 +22,6 @@ object YcJetpack {
     @JvmStatic
     fun init(app: Application) {
         mApplication = app
-        mDefaultBaseUrl = baseUrl
         //Logger初始化
         Logger.addLogAdapter(AndroidLogAdapter())
     }
