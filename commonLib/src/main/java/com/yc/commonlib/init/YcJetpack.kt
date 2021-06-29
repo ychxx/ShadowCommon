@@ -18,12 +18,18 @@ object YcJetpack {
     const val OTHER_BASE_URL = "other_base_url"
     var mDefaultBaseUrl = ""
     public lateinit var mApplication: Application
+
     @JvmStatic
-    fun ycInit(app: Application, baseUrl: String = "") {
+    fun init(app: Application) {
         mApplication = app
         mDefaultBaseUrl = baseUrl
         //Logger初始化
         Logger.addLogAdapter(AndroidLogAdapter())
+    }
+
+    @JvmStatic
+    fun setBaseUrl(baseUrl: String = "") {
+        mDefaultBaseUrl = baseUrl
     }
 
     /**
