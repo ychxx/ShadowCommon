@@ -1,6 +1,6 @@
 package com.yc.commonlib.net
 
-import com.yc.commonlib.YcJetpack
+import com.yc.commonlib.init.YcJetpack
 import com.yc.commonlib.extension.ycLogE
 import okhttp3.*
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull

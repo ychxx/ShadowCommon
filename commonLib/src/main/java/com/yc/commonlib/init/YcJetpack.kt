@@ -1,13 +1,9 @@
-package com.yc.commonlib
+package com.yc.commonlib.init
 
 import android.app.Application
-import android.os.Process
-import android.util.Log
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.yc.commonlib.extension.YcLogExt
-import com.yc.commonlib.net.YcRetrofitUtil
-import retrofit2.Retrofit
 
 /**
  * Creator: yc
