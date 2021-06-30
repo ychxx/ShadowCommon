@@ -1,6 +1,6 @@
 package com.yc.commonlib.net
 
-import com.yc.commonlib.YcJetpack
+import com.yc.commonlib.init.YcJetpack
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

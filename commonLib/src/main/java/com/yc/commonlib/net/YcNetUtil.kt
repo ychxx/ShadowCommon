@@ -2,7 +2,7 @@ package com.yc.commonlib.net
 
 import android.content.Context
 import android.net.ConnectivityManager
-import com.yc.commonlib.YcJetpack
+import com.yc.commonlib.init.YcJetpack
 
 /**
  *

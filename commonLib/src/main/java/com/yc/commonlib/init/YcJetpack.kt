@@ -1,13 +1,9 @@
-package com.yc.commonlib
+package com.yc.commonlib.init
 
 import android.app.Application
-import android.os.Process
-import android.util.Log
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.yc.commonlib.extension.YcLogExt
-import com.yc.commonlib.net.YcRetrofitUtil
-import retrofit2.Retrofit
 
 /**
  * Creator: yc
@@ -22,12 +18,17 @@ object YcJetpack {
     const val OTHER_BASE_URL = "other_base_url"
     var mDefaultBaseUrl = ""
     public lateinit var mApplication: Application
+
     @JvmStatic
-    fun init(app: Application, baseUrl: String = "") {
+    fun init(app: Application) {
         mApplication = app
-        mDefaultBaseUrl = baseUrl
         //Logger初始化
         Logger.addLogAdapter(AndroidLogAdapter())
+    }
+
+    @JvmStatic
+    fun setBaseUrl(baseUrl: String = "") {
+        mDefaultBaseUrl = baseUrl
     }
 
     /**

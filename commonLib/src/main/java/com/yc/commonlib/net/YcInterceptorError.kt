@@ -1,7 +1,7 @@
 package com.yc.commonlib.net
 
 import android.text.TextUtils
-import com.yc.commonlib.YcJetpack
+import com.yc.commonlib.init.YcJetpack
 import com.yc.commonlib.data.constant.YcNetErrorCode
 import com.yc.commonlib.exception.YcIoException
 import okhttp3.*
