@@ -10,23 +10,32 @@ import com.yc.commonlib.extension.YcLogExt
  * Date: 2021/6/3 13:54
  * UseDes:
  */
-object YcJetpack {
+
+class YcCommon private constructor() {
+    companion object {
+        const val OTHER_BASE_URL = "other_base_url"
+        val Instance = YcJetpack2Holder.holder
+    }
+
+    private object YcJetpack2Holder {
+        val holder = YcCommon()
+    }
+
     /**
      * 请求成功返回的code
      */
     var mNetSuccessCode: Int? = 200
-    const val OTHER_BASE_URL = "other_base_url"
-    var mDefaultBaseUrl = ""
-    public lateinit var mApplication: Application
 
-    @JvmStatic
+    var mDefaultBaseUrl = ""
+    lateinit var mApplication: Application
+
     fun init(app: Application) {
         mApplication = app
         //Logger初始化
         Logger.addLogAdapter(AndroidLogAdapter())
     }
 
-    @JvmStatic
+
     fun setBaseUrl(baseUrl: String = "") {
         mDefaultBaseUrl = baseUrl
     }
@@ -34,7 +43,6 @@ object YcJetpack {
     /**
      * 是否显示logger
      */
-    @JvmStatic
     fun setLog(isShow: Boolean) {
         YcLogExt.mIsShowLogger = isShow
     }

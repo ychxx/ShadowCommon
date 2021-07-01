@@ -1,6 +1,6 @@
 package com.yc.commonlib.net
 
-import com.yc.commonlib.init.YcJetpack
+import com.yc.commonlib.init.YcCommon
 import com.yc.commonlib.extension.ycLogE
 import okhttp3.*
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
@@ -40,10 +40,10 @@ class YcInterceptorLog : YcInterceptor {
         //获取request的创建者builder
         val builder: Request.Builder = request.newBuilder()
         //从request中获取headers，通过给定的键url_name
-        val headerValues = request.headers(YcJetpack.OTHER_BASE_URL)
+        val headerValues = request.headers(YcCommon.OTHER_BASE_URL)
         return if (headerValues.isNotEmpty()) {
             //将配置的header删除，因为header仅用作app和okhttp之间使用
-            builder.removeHeader(YcJetpack.OTHER_BASE_URL)
+            builder.removeHeader(YcCommon.OTHER_BASE_URL)
             headerValues[0]
         } else {
             null

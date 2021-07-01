@@ -1,6 +1,6 @@
 package com.yc.commonlib.net
 
-import com.yc.commonlib.init.YcJetpack
+import com.yc.commonlib.init.YcCommon
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -32,7 +32,7 @@ class YcRetrofitUtil private constructor() {
             .build()
     }
 
-    private fun createRetrofit(baseUrl: String = YcJetpack.mDefaultBaseUrl): Retrofit {
+    private fun createRetrofit(baseUrl: String = YcCommon.Instance.mDefaultBaseUrl): Retrofit {
         return Retrofit.Builder()
             .client(createClient())
             .baseUrl(baseUrl)

@@ -1,9 +1,10 @@
 -keep class kotlin.** { *; }
 -keep class kotlin.Metadata { *; }
 -keep class com.yc.commonlib.**{*;}
+-keep class com.yc.commonlib.**${*;}
+-keep class com.yc.commonlib.init.YcCommon
 
 -keepattributes *Annotation*
--keep class retrofit2.** { *; }
 -keepclasseswithmembers class * {
 @retrofit.http.* <methods>; }
 -keepattributes Signature

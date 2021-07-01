@@ -1,9 +1,9 @@
 package com.yc.commonlib.net
 
 import android.text.TextUtils
-import com.yc.commonlib.init.YcJetpack
 import com.yc.commonlib.data.constant.YcNetErrorCode
 import com.yc.commonlib.exception.YcIoException
+import com.yc.commonlib.init.YcCommon
 import okhttp3.*
 import okio.BufferedSource
 import org.json.JSONException
@@ -34,7 +34,7 @@ class YcInterceptorError : YcInterceptor {
                 if (TextUtils.isEmpty(msg)) {
                     msg = "接口异常!code:$code message:$msg";
                 }
-                if (YcJetpack.mNetSuccessCode != null && code != YcJetpack.mNetSuccessCode) {
+                if (YcCommon.Instance.mNetSuccessCode != null && code != YcCommon.Instance.mNetSuccessCode) {
                     throw YcIoException(msg, code)
 //                    return response.newBuilder().body(msg.toResponseBody(response.body!!.contentType())).build()
                 }
