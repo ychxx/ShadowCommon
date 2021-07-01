@@ -44,19 +44,19 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     /**--kotlin 的扩展--**/
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version"
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_version"
     /**--retrofit  网络请求--**/
-    api "com.squareup.retrofit2:retrofit:$retrofit2_version"
-    api "com.squareup.retrofit2:converter-gson:$retrofit2_version"
-    api "com.squareup.retrofit2:retrofit-mock:$retrofit2_version"
-    api "com.squareup.retrofit2:converter-scalars:$retrofit2_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2_version"
+    implementation "com.squareup.retrofit2:retrofit-mock:$retrofit2_version"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit2_version"
     /**--okHttp-logging-interceptor 日志拦截器--**/
     implementation "com.squareup.okhttp3:logging-interceptor:$okHttpLogging_version"
     /**--log日志--**/
     implementation "com.orhanobut:logger:$logger_version"
     /**--图片加载--**/
-    api "com.github.bumptech.glide:glide:$glide_version"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
 
 
