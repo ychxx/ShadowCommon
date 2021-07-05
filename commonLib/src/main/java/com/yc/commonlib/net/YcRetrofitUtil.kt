@@ -23,13 +23,16 @@ class YcRetrofitUtil private constructor() {
 
     private var mRetrofit: Retrofit? = null
     private fun createClient(): OkHttpClient {
-        return OkHttpClient.Builder()
-            .addInterceptor(YcInterceptorError())
-            .addInterceptor(YcInterceptorLog())
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .build()
+        return OkHttpClient.Builder().apply {
+            addInterceptor(YcInterceptorError())
+            addInterceptor(YcInterceptorLog())
+            for (interceptor in YcCommon.Instance.mInterceptor) {
+                addInterceptor(interceptor)
+            }
+            connectTimeout(30, TimeUnit.SECONDS)
+            writeTimeout(30, TimeUnit.SECONDS)
+            readTimeout(30, TimeUnit.SECONDS)
+        }.build()
     }
 
     private fun createRetrofit(baseUrl: String = YcCommon.Instance.mDefaultBaseUrl): Retrofit {

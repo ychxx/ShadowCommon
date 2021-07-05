@@ -4,6 +4,8 @@ import android.app.Application
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.yc.commonlib.extension.YcLogExt
+import com.yc.commonlib.net.YcInterceptor
+import okhttp3.Interceptor
 
 /**
  * Creator: yc
@@ -26,6 +28,10 @@ class YcCommon private constructor() {
      */
     var mNetSuccessCode: Int? = 200
 
+    /**
+     * retrofit的过滤器
+     */
+    val mInterceptor: MutableList<Interceptor> = mutableListOf()
     var mDefaultBaseUrl = ""
     lateinit var mApplication: Application
 
@@ -38,6 +44,13 @@ class YcCommon private constructor() {
 
     fun setBaseUrl(baseUrl: String = "") {
         mDefaultBaseUrl = baseUrl
+    }
+
+    /**
+     * 添加过滤器
+     */
+    fun addInterceptor(interceptor: Interceptor) {
+        mInterceptor.add(interceptor)
     }
 
     /**
