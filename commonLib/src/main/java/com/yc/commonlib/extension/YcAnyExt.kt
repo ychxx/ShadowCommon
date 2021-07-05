@@ -1,5 +1,9 @@
 package com.yc.commonlib.extension
 
+import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.util.*
@@ -81,6 +85,19 @@ fun String?.ycToDoubleAndFormatToString(block: (Double) -> Double, format: Strin
     return@ycTryReturnData null
 })
 
+/**
+ * 生成MediaType?
+ */
+fun String.ycToMediaType(): MediaType? {
+    return this.toMediaTypeOrNull()
+}
+
+/**
+ * 生成RequestBody
+ */
+fun String.ycToRequestBody(mediaType: MediaType? = "application/json".toMediaTypeOrNull()): RequestBody {
+    return this.toRequestBody(mediaType)
+}
 
 /**
  * 字符串判断是否为空
