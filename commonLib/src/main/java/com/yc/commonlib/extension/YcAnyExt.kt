@@ -139,7 +139,12 @@ fun Int?.ycToStringNoEmptyNoZero(defaultData: String = YcAnyExt.mCommonDefaultSt
         "$this"
     }
 }
-
+/**
+ * 计算总页数
+ */
+fun Int.toPageSum(pageSize: Int = 30): Int {
+    return (this + pageSize - 1) / pageSize
+}
 /**
  * 将许空Float转为非空Float（空用0替代）
  */
