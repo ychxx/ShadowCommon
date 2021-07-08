@@ -4,7 +4,7 @@ package com.yc.commonlib.exception
 /**
  *  网络请求异常类
  */
-public open class YcException : Throwable {
+public open class YcException : Exception {
     var code: Int
     var msg: String? = null
         get() {
