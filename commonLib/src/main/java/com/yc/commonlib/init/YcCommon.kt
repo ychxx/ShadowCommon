@@ -3,8 +3,8 @@ package com.yc.commonlib.init
 import android.app.Application
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
+import com.yc.commonlib.R
 import com.yc.commonlib.extension.YcLogExt
-import com.yc.commonlib.net.YcInterceptor
 import okhttp3.Interceptor
 
 /**
@@ -22,6 +22,17 @@ class YcCommon private constructor() {
     private object YcJetpack2Holder {
         val holder = YcCommon()
     }
+
+    /**
+     * 加载网络图片失败时显示的图片
+     */
+    var mImgIdResFail: Int = R.drawable.img_loading
+
+    /**
+     * 加载网络图片加载时显示的图片
+     */
+    var mImgIdResLoading: Int = R.drawable.img_loading
+
 
     /**
      * 请求成功返回的code
